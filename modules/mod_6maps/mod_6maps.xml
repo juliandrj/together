@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" client="site" method="upgrade">
+	<name>6maps</name>
+	<author>Balbooa</author>
+	<creationDate>Dec 2013</creationDate>
+	<copyright>Copyright @ 2013 Balbooa.com. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>support@balbooa.com</authorEmail>
+	<authorUrl>http://www.balbooa.com</authorUrl>
+	<version>3.1.0</version>
+	<description>
+		<![CDATA[
+			<p style="text-align: center;">
+			<a target="_blank" href="http://www.balbooa.com" title="Balbooa.com - Powerful and Beautiful Joomla templates and Joomla extensions for YOU ">
+	  		<img style="width:425px;" src="../modules/mod_6maps/admin/images/ba-logo.png" alt="Joomla extensions and Joomla templates for website development">
+			</a>
+      		</p>
+		]]>
+	</description>
+	<languages>
+		<language tag="ca-ES">language/ca-ES/ca-ES.mod_6maps.ini</language>
+		<language tag="el-GR">language/el-GR/el-GR.mod_6maps.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.mod_6maps.ini</language>
+		<language tag="es-ES">language/es-ES/es-ES.mod_6maps.ini</language>
+		<language tag="fr-FR">language/fr-FR/fr-FR.mod_6maps.ini</language>
+		<language tag="hu-HU">language/hu-HU/hu-HU.mod_6maps.ini</language>
+		<language tag="id-ID">language/id-ID/id-ID.mod_6maps.ini</language>
+		<language tag="it-IT">language/it-IT/it-IT.mod_6maps.ini</language>
+		<language tag="nl-NL">language/nl-NL/nl-NL.mod_6maps.ini</language>
+		<language tag="pl-PL">language/pl-PL/pl-PL.mod_6maps.ini</language>
+		<language tag="pt-BR">language/pt-BR/pt-BR.mod_6maps.ini</language>
+		<language tag="ru-RU">language/ru-RU/ru-RU.mod_6maps.ini</language>
+		<language tag="sv-SE">language/sv-SE/sv-SE.mod_6maps.ini</language>
+	</languages>
+	<files>
+		<filename module="mod_6maps">mod_6maps.php</filename>
+		<folder>admin</folder>
+		<folder>language</folder>
+		<folder>tmpl</folder>
+		<filename>index.html</filename>
+	</files>
+	<config>
+		<fields name="params" addfieldpath="/modules/mod_6maps/admin">
+			<fieldset name="Basic" label="MAPS_OPTIONS" addfieldpath="/modules/mod_6maps/fields">
+				<field name="admin_type" type="admin" default="" label="" description="" />
+				<field name="address" type="text" default="New York" label="MAPS_ADDRESS" description="MAPS_ADDRESS_DESC"></field>
+				<field name="height" type="text" class="number slideoptions" default="300" label="HEIGHT" description="HEIGHT_DESC"/>
+				<field name="width" type="text" class="number slideoptions" default="500" label="WIDTH" description="WIDTH_DESC"/>
+				<field name="ZOOM_CONTROL" type="list" default="ROADMAP" label="MAPS_TYPE" description="MAPS_TYPE_DESC">
+					<option value="ROADMAP">Roadmap</option>
+					<option value="SATELLITE">Satellite</option>
+					<option value="HYBRID">Hybrid</option>
+					<option value="TERRAIN">Terrain</option>
+				</field>
+				<field id="idchangeMapColor" name="changeMapColor" type="list" default="false" label="CHANGE_COLOR" description="CHANGE_COLOR_DESC">
+					<option value="true">Yes</option>
+					<option value="false">No</option>
+				</field>
+				<field id="idMapColor" name="mapColor"   type="color" label="MAPS_COLOR" description="MAPS_COLOR_DESC"/>
+				<field name="zoom" type="list" class="number slideoptions" default="6" label="ZOOM" description="ZOOM_DESC">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+					<option value="13">13</option>
+					<option value="14">14</option>
+					<option value="15">15</option>
+					<option value="16">16</option>
+					<option value="17">17</option>
+					<option value="18">18</option>
+					<option value="19">19</option>
+					<option value="20">20</option>
+					<option value="21">21</option>
+					<option value="22">22</option>
+				</field>
+				<field name="zoomControl" type="list" default="true" label="ZOOM_CONTROL" description="ZOOM_CONTROL_DESC">
+					<option value="true">Yes</option>
+					<option value="false">No</option>
+				</field>
+				<field name="mapTypeControl" type="list" default="true" label="TYPE_CONTROL" description="TYPE_CONTROL_DESC">
+					<option value="true">Yes</option>
+					<option value="false">No</option>
+				</field>
+				<field name="scaleControl" type="list" default="true" label="SCALE_CONTROL" description="SCALE_CONTROL_DESC">
+					<option value="true">Yes</option>
+					<option value="false">No</option>
+				</field>
+				<field name="streetViewControl" type="list" default="true" label="STREET_VIEW_CONTROL" description="STREET_VIEW_CONTROL_DESC">
+					<option value="true">Yes</option>
+					<option value="false">No</option>
+				</field>
+				<field name="panControl" type="list" default="true" label="PAN_CONTROL" description="PAN_CONTROL_DESC">
+					<option value="true">Yes</option>
+					<option value="false">No</option>
+				</field>
+				<field name="overviewMapControl" type="list" default="true" label="OVERVIEW_CONTROL" description="OVERVIEW_CONTROL_DESC">
+					<option value="true">Yes</option>
+					<option value="false">No</option>
+				</field>
+				<field name="rotateControl" type="list" default="true" label="ROTATE_CONTROL" description="ROTATE_CONTROL_DESC">
+					<option value="true">Yes</option>
+					<option value="false">No</option>
+				</field>
+			</fieldset>
+			<fieldset name="Marker" label="MARKER_OPTIONS">
+				<field name="title" type="text" default="" label="MAPS_TITLE" description="MAPS_TITLE_DESC">
+				</field>
+				<field name="image" type="media" label="MAPS_IMAGE" description="MAPS_IMAGE_DESC">
+				</field>
+				<field name="infoWindowControl" type="list" default="false" label="INFO_CONTROL" description="INFO_CONTROL_DESC">
+					<option value="true">Yes</option>
+					<option value="false">No</option>
+				</field>
+				<field name="contentInfo" type="editor" rows="10" cols="40" default="" filter="raw" label="CONTENT_INFO" description="CONTENT_INFO_DESC">
+				</field>
+			</fieldset>
+			<fieldset name="advanced">
+				<field name="module_background" type="media" default="" label="Module background" description="" />
+				<field name="moduleclass_sfx" type="text" default="" label="MODSFX" description="MODSFX_DESC"/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

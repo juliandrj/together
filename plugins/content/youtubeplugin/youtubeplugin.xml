@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="content">
+	<name>YouTube Plugin</name>
+	<author>Benjamin Golding</author>
+	<creationDate>Jan 2013</creationDate>
+	<copyright>Benjamin Golding 2013. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>awesome24@hush.ai</authorEmail>
+	<authorUrl>joomlacode.org/gf/project/youtubeplugin/</authorUrl>
+	<version>1.1</version>
+	<description>
+	<![CDATA[
+<p>With this plugin, you can embed YouTube videos into articles simply by copying and pasting a youtube's video parameter between the youtube flags: {youtube}xxxxxx{/youtube}. So for instance if the URL is: www.youtube.com/watch?v=2jvLalY6ubc <br/><br/>Then you would insert the following text to your article:<br/>
+{youtube}2jvLalY6ubc{/youtube}<br/><br/> You can find more information here: http://joomlacode.org/gf/project/youtubeplugin/  </p><p>-----<b>But first </b>go to the plugin manager (From the toolbar: Extension -> Plug-in Manager) and enable the plugin by switching the button near it from red to green.</p>
+	]]>
+	</description>
+	<files>
+		<filename plugin="youtubeplugin">youtubeplugin.php</filename>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="width" type="text" default="425" label="Width" description="Width of the YouTube video. Default width is 425 pixels." />
+				<field name="height" type="text" default="344" label="Height" description="Height of the YouTube video. Default height is 344 pixels." />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

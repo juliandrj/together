@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="template">
+	<name>mec3</name>
+	<creationDate>2013-12-01</creationDate>
+	<author>Julian Rojas</author>
+	<authorEmail>juliandrj@gmail.com</authorEmail>
+	<copyright>mec3 2013</copyright>
+	<license>GNU/GPL</license>
+	<version>1.0</version>
+	<description>Nuevo sitio MEC3</description>
+	<files>
+		<filename>index.php</filename>
+		<filename>templateDetails.xml</filename>
+		<folder>img</folder>
+		<folder>fonts</folder>
+		<folder>css</folder>
+		<folder>js</folder>
+	</files>
+	<positions>
+		<position>head</position>
+		<position>login</position>
+		<position>jumbotron</position>
+		<position>menu</position>
+		<position>breadcrumbs</position>
+		<position>footer</position>
+	</positions>
+</extension>
