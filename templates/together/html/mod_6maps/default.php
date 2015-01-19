@@ -1,5 +1,5 @@
 <?php defined('_JEXEC') or die('Restricted access');
-$doc->addStyleSheet(JURI::root() . 'modules/mod_6maps/admin/css/style.css'); ?>
+//$doc->addStyleSheet(JURI::root() . 'modules/mod_6maps/admin/css/style.css'); ?>
 <script type="text/javascript">
 var maps<?php echo $uniqid;?>;
 var marker<?php echo $uniqid;?> = null;

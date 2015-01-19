@@ -46,6 +46,9 @@ $isFrontPage = $menu->getActive() == $menu->getDefault();
 			.espacio-inferior {
 				margin-bottom: 100px;
 			}
+			.espacio-superior {
+				margin-top: 60px;
+			}
 			.shadow {
 				padding: 1.5em;
 				background: #000;
@@ -67,16 +70,21 @@ $isFrontPage = $menu->getActive() == $menu->getDefault();
 				box-shadow: 0 0 50px rgba(0,0,0,0.8);
 				padding: 200px 0;
 			}
+
 			#nav {
 				background-color: transparent !important;
 				background-image: url(<?php echo $this->baseurl; ?>/templates/together/img/trans_menu.png);
 				border-color: transparent !important;
 			}
-			.navbar-header a {
-				padding: 0.25em;
-				padding-right: 3em;
-				margin-right: 1em;
+			
+			#logo {
+				width: 175px;
+				height: 40px;
+				margin: 0.3em 0.5em;
+				background: url(<?php echo $this->baseurl; ?>/templates/together/img/logo.png) no-repeat center center;
+				float: left;
 			}
+
 			.head {
 				width: 535px;
 				height: 175px;
@@ -176,12 +184,13 @@ $isFrontPage = $menu->getActive() == $menu->getDefault();
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
 	<body data-spy="scroll" data-target="#destacados">
-		<div class="container-fluid espacio-inferior">
+		<div class="container-fluid<?php if ($isFrontPage) { ?> espacio-inferior<?php } else { ?> espacio-superior<?php } ?>">
 			<div id="inicio" class="row">
 				<div class="col-md-12">
 					<jdoc:include type="modules" name="menu" />
 				</div>
 			</div>
+			<?php if ($isFrontPage) : ?>
 			<section id="head" data-speed="4" data-type="background">
 				<div class="row">
 					<div class="col-md-offset-6 col-md-6">
@@ -191,6 +200,7 @@ $isFrontPage = $menu->getActive() == $menu->getDefault();
 					</div>
 				</div>
 			</section>
+			<?php endif; ?>
 			<?php if ($this->countModules( 'breadcrumbs' ) && !$isFrontPage) : ?>
 			<div class="row">
 				<div class="col-md-12">
@@ -223,5 +233,6 @@ $isFrontPage = $menu->getActive() == $menu->getDefault();
 			</div>
 			<jdoc:include type="modules" name="footer" style="mapa" />
 		</div>
+		<jdoc:include type="modules" name="login" />
 	</body>
 </html>

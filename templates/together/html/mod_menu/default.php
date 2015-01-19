@@ -1,15 +1,13 @@
 <?php defined('_JEXEC') or die; ?>
 <nav id="nav" class="navbar navbar-default navbar-fixed-top hidden-print hidden-xs hidden-sm">
-	<div class="navbar-inner">
+	<div class="container-fluid">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="<?php echo JURI::root(); ?>">
-				<img src="<?php echo JURI::root(); ?>/templates/together/img/logo.png" alt="Together" />
-			</a>
+			<span id="logo"></span>
 		</div>
 		<div class="collapse navbar-collapse" id="menu">
 			<ul class="nav navbar-nav">
@@ -53,6 +51,11 @@
 					?>
 				<?php endforeach; ?>
 			</ul>
+			<?php if (JDocumentHTML::countModules('login')) : ?>
+			<button id="login-btn" type="button" class="btn btn-default navbar-btn navbar-right" data-toggle="modal" data-target="#loginModal">
+				<?php echo JText::_('JLOGIN'); ?>
+			</button>
+			<?php endif; ?>
 		</div>
 	</div>
 </nav>

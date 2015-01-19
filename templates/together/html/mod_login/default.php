@@ -1,9 +1,6 @@
 <?php defined('_JEXEC') or die;
 JHtml::_('behavior.keepalive');
 ?>
-	<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#loginModal">
-		<?php echo JText::_('JLOGIN'); ?>
-	</button>
 	<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
     		<div class="modal-content">
