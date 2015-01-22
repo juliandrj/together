@@ -20,7 +20,23 @@ class TogetherModelTogether extends JModelItem {
 			$query->where("genero='".$genero."'")->where("x=".$x)->where("y=".$y);
 			$db->setQuery((string)$query);
 			$val = $db->loadObject();
-			return $val->constante;
+			return isset($val->constante) ? $val->constante : 0;
+		} catch (Exception $ex) {
+			error_log($ex->getMessage());
+			return -1;
+		}
+	}
+	
+	public function getAlimentos($uid, $tipo, $limit) {
+		try {
+			$db = JFactory::getDBO();
+			$query = $db->getQuery(true);
+			$query->select('st.subtipo')->select('al.nombre')->select('al.valor as valor')->select('al.unidad');
+			$query->from('#__together_alimentos al')->from('#__together_subtipo st');
+			$query->where("al.subtipo = st.id")->where("st.tipo=" . $tipo);
+			$query->order("rand() limit " . $limit);
+			$db->setQuery((string)$query);
+			return $db->loadObjectList();
 		} catch (Exception $ex) {
 			error_log($ex->getMessage());
 			return -1;
