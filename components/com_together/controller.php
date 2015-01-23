@@ -30,7 +30,7 @@ class TogetherController extends JControllerLegacy {
 		JResponse::setHeader('Content-Disposition','attachment;filename="progress-report-results.json"');
 		try {
 			$imc = $this->imc(JFactory::getApplication()->input);
-			$imc->protvals = $this->generarDieta(0, $imc);
+			$imc->dieta = $this->generarDieta(0, $imc);
 			echo json_encode($imc);
 		} catch (Exception $ex) {
 			echo '{"exception":"' . $ex->getMessage() . '"}';

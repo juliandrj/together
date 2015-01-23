@@ -9,7 +9,8 @@ $(document).ready(function () {
 		grasa: ko.observable(0),
 		imc: ko.observable(0),
 		proteina: ko.observable(0),
-		magro: ko.observable(0)
+		magro: ko.observable(0),
+		dieta: ko.observableArray()
 	};
 	$('#calcular-btn').click(function () {
 		var hasErrors = false;
@@ -39,6 +40,7 @@ $(document).ready(function () {
 						$('#imc').val(data.imc);
 						$('#proteina').val(data.proteina);
 						$('#magro').val(data.magro);
+						togetherVM.dieta(data.dieta);
 					}
 				},
 				error: function (jqXHR, textStatus, errorThrown) {
@@ -111,6 +113,13 @@ $(document).ready(function () {
 			</div>
 		</div>
 	</div>
+	<div class="form-group">
+		<div class="col-sm-12 text-center">
+			<button id="calcular-btn" type="button" class="btn btn-primary">
+				Calcular
+			</button>
+		</div>
+	</div>
 	<div class="row">
 		<div class="form-group col-md-6">
 			<label for="proteina" class="col-sm-4 control-label">Proteina</label>
@@ -139,11 +148,39 @@ $(document).ready(function () {
 			</div>
 		</div>
 	</div>
-	<div class="form-group">
-		<div class="col-sm-12 text-center">
-			<button id="calcular-btn" type="button" class="btn btn-primary">
-				Calcular
-			</button>
+	<div class="row">
+		<div class="col-md-12">
+			<table class="table">
+				<thead>
+					<th>Comida</th>
+					<th class="text-center" colspan="2">Proteinas</th>
+					<th class="text-center" colspan="2">Carbohidratos</th>
+					<th class="text-center" colspan="2">Grasas</th>
+				</thead>
+				<tbody data-bind="foreach: dieta">
+					<tr>
+						<td><strong><span data-bind="text: nombre"></strong></span> <span data-bind="text: k"></span></td>
+						<td>
+							<span data-bind="text: proteina.nombre"></span>
+						</td>
+						<td>
+							<span data-bind="text: proteina.valor"></span><span data-bind="text: proteina.unidad"></span>
+						</td>
+						<td>
+							<span data-bind="text: carbohidratos.nombre"></span>
+						</td>
+						<td>
+							<span data-bind="text: carbohidratos.valor"></span><span data-bind="text: carbohidratos.unidad"></span>
+						</td>
+						<td>
+							<span data-bind="text: grasas.nombre"></span>
+						</td>
+						<td>
+							<span data-bind="text: grasas.valor"></span><span data-bind="text: grasas.unidad"></span>
+						</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 	</div>
 </form>

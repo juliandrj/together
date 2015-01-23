@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="2.5.0" method="upgrade">
+	<name>together</name>
+	<creationDate>20/01/2015</creationDate>
+	<author>Julian Rojas / Daniel Rojas</author>
+	<authorEmail>juliandrj@gmail.com</authorEmail>
+	<copyright>2015</copyright>
+	<license>GNU</license>
+	<version>0.1</version>
+	<description>Componente calculadora de dietas</description>
+	<update>
+		<schemas>
+			<schemapath type="mysql">sql/updates/mysql</schemapath>
+		</schemas>
+	</update>
+	<files folder="site">
+		<filename>index.html</filename>
+		<filename>together.php</filename>
+		<filename>controller.php</filename>
+		<folder>views</folder>
+	</files>
+	<administration>
+		<menu>Together</menu>
+		<files folder="admin">
+			<filename>index.html</filename>
+			<filename>together.php</filename>
+			<folder>sql</folder>
+		</files>
+	</administration>
+</extension>
