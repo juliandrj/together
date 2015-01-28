@@ -183,9 +183,9 @@ $isFrontPage = $menu->getActive() == $menu->getDefault();
 		</script>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
-	<body data-spy="scroll" data-target="#destacados">
-		<div class="container-fluid<?php if ($isFrontPage) { ?> espacio-inferior<?php } else { ?> espacio-superior<?php } ?>">
-			<div id="inicio" class="row">
+	<body data-spy="scroll" data-target="#<?php if ($app->input->getString('option') != 'com_together') { ?>destacados<?php } else {?>bar-together<?php } ?>">
+		<div id="inicio" class="container-fluid<?php if ($isFrontPage) { ?> espacio-inferior<?php } else { ?> espacio-superior<?php } ?>">
+			<div class="row">
 				<div class="col-md-12">
 					<jdoc:include type="modules" name="menu" />
 				</div>
