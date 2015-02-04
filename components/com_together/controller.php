@@ -51,6 +51,7 @@ class TogetherController extends JControllerLegacy {
 			$data->afisica = $m->getAFisica($persona->afisica);
 			$imc = $this->imc($data);
 			$imc->dieta = $this->generarDieta($persona->uid, $imc);
+			$imc->rutina = $m->getRutina($imc->grasa);
 			echo json_encode($imc);
 		} catch (Exception $ex) {
 			echo '{"exception":"' . $ex->getMessage() . '"}';

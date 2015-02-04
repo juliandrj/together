@@ -311,6 +311,8 @@ $(document).ready(function () {
 						</tr>
 					</tbody>
 				</table>
+				<h3>Rutina de ejercicios</h3>
+				<div id="rutina" data-bind="html: dieta().rutina"></div>
 			</div>
 		</div>
 	</div>

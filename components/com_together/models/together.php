@@ -159,7 +159,7 @@ class TogetherModelTogether extends JModelItem {
 			for ($i = 0; $i < count($data); $i ++) {
 				if ($i == 0) {
 					$query = $db->getQuery(true);
-					$query->delete('#__together_persona_antecedente')->where('uid=' + $data[$i]['uid']);
+					$query->delete('#__together_persona_antecedente')->where('uid=' . $data[$i]['uid']);
 					$db->setQuery((string)$query);
 					if (!$db->execute()) {
 						throw new Exception(JText::_('[ANT] No se logro eliminar los registros anteriores'));
@@ -186,7 +186,7 @@ class TogetherModelTogether extends JModelItem {
 			for ($i = 0; $i < count($data); $i ++) {
 				if ($i == 0) {
 					$query = $db->getQuery(true);
-					$query->delete('#__together_persona_medida')->where('uid=' + $data[$i]['uid']);
+					$query->delete('#__together_persona_medida')->where('uid=' . $data[$i]['uid']);
 					$db->setQuery((string)$query);
 					if (!$db->execute()) {
 						throw new Exception(JText::_('[MED] No se logro eliminar los registros anteriores'));
@@ -262,6 +262,22 @@ class TogetherModelTogether extends JModelItem {
 			$db->setQuery((string)$query);
 			$val = $db->loadObject();
 			return $val ? $val->valor : 0;
+		} catch (Exception $ex) {
+			error_log($ex->getMessage());
+			return 0;
+		}
+	}
+	
+	public function getRutina($grasa) {
+		try {
+			$db = JFactory::getDBO();
+			$query = $db->getQuery(true);
+			$query->select('rutina');
+			$query->from('#__together_rutina');
+			$query->where($grasa . " between rango_inferior and rango_superior");
+			$db->setQuery((string)$query);
+			$val = $db->loadObject();
+			return $val ? $val->rutina : 0;
 		} catch (Exception $ex) {
 			error_log($ex->getMessage());
 			return 0;
