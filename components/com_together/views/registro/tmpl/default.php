@@ -95,6 +95,27 @@ $(document).ready(function () {
 		togetherVM.found(false);
 		togetherVM.verDieta(false);
 	});
+	$('#btn-enviar').click(function () {
+		var $btn = $(this).button('loading');
+		$.ajax({
+			url: '<?php echo JUri::root(); ?>index.php',
+			data: 'option=com_together&task=enviar&documento=' + $('#documento').val(),
+			type: 'post',
+			dataType: 'json',
+			success: function (data) {
+				if (data.exception) {
+					alert(data.exception);
+				} else {
+					alert("Mensaje enviado con exito.");
+				}
+				$btn.button('reset');
+			},
+			error: function (jqXHR, textStatus, errorThrown) {
+				alert(errorThrown)
+				$btn.button('reset');
+			}
+		});
+	});
 	$('#btn-verDieta').click(function () {
 		var $btn = $(this).button('loading');
 		$.ajax({
@@ -353,6 +374,14 @@ $(document).ready(function () {
 			<li>
 				<button id="btn-verDieta" type="button" class="btn btn-primary navbar-btn" data-loading-text="cargando..." data-bind="enable: verDieta">
 					<span class="glyphicon glyphicon-print" aria-hidden="true"></span> Ver dieta
+				</button>
+			</li>
+			<li>
+				<p class="navbar-text">|</p>
+			</li>
+			<li>
+				<button id="btn-enviar" type="button" class="btn btn-warning navbar-btn" data-loading-text="enviando..." data-bind="enable: verDieta">
+					<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Enviar reporte
 				</button>
 			</li>
 			<li>
