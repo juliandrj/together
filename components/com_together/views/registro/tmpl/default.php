@@ -333,7 +333,15 @@ $(document).ready(function () {
 					</tbody>
 				</table>
 				<h3>Rutina de ejercicios</h3>
-				<div id="rutina" data-bind="html: dieta().rutina"></div>
+				<div role="tabpanel">
+					<ul class="nav nav-tabs" role="tablist">
+						<li role="presentation" class="active"><a href="#semana1" aria-controls="semana1" role="tab" data-toggle="tab">Semana 1</a></li>
+						<li role="presentation"><a href="#semana2" aria-controls="semana2" role="tab" data-toggle="tab">Semana 2</a></li>
+						<li role="presentation"><a href="#semana3" aria-controls="semana3" role="tab" data-toggle="tab">Semana 3</a></li>
+						<li role="presentation"><a href="#semana4" aria-controls="semana4" role="tab" data-toggle="tab">Semana 4</a></li>
+					</ul>
+					<div id="rutina" data-bind="html: dieta().rutina"></div>
+				</div>
 			</div>
 		</div>
 	</div>
